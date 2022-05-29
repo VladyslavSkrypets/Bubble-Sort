@@ -23,10 +23,7 @@ def execution_timer(function: Callable):
     return wrapper
 
 
-def generate_array(length: int = 0, sort: bool = False) -> List[int]:
-    if sort:
-        return [number for number in range(length)]
-
+def generate_array(length: int = 0) -> List[int]:
     left_num_limit, right_num_limit = -(length * length), length * length
 
     return [randint(left_num_limit, right_num_limit) for _ in range(length)]

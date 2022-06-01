@@ -2,6 +2,8 @@ import threading
 import itertools
 from typing import List
 
+from helpers import execution_timer
+
 
 lock = threading.Lock()
 
@@ -24,6 +26,7 @@ def bubble_sort(array: List[int]) -> None:
     lock.release()
 
 
+@execution_timer
 def parallel_bubble_sort(*, array: List[int], threads_count: int = 4) -> List[int]:
     biggest_array_element = max(array)
 

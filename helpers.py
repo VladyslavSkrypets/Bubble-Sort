@@ -16,7 +16,7 @@ def execution_timer(function: Callable):
 
         print(
             f'Function "{function.__name__}" sorted array with {len(kwargs["array"])} elements '
-            f'in {round(end_execution, 6)} seconds.'
+            f'in {round(end_execution * 1_000_000)} microseconds.'
         )
 
         return result

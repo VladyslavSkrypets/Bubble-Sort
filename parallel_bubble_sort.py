@@ -5,12 +5,7 @@ from typing import List
 from helpers import execution_timer
 
 
-lock = threading.Lock()
-
-
 def bubble_sort(array: List[int]) -> None:
-    lock.acquire()
-
     array_items_count = len(array)
 
     for i in range(array_items_count):
@@ -22,8 +17,6 @@ def bubble_sort(array: List[int]) -> None:
 
         if not swapped:
             break
-
-    lock.release()
 
 
 @execution_timer
